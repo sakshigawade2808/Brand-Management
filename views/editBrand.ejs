@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Brand</title>
+
+    <style>
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#f2f2f2;
+            margin:0;
+        }
+
+        .container{
+            width:500px;
+            margin:40px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+
+        h2{
+            text-align:center;
+            color:#007bff;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input,
+        select{
+            width:100%;
+            padding:10px;
+            margin-top:8px;
+            margin-bottom:20px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#28a745;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#218838;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Edit Brand</h2>
+
+<form action="/brands/edit/<%= brand.brand_id %>" method="POST">
+
+<label>Brand Name</label>
+
+<input
+type="text"
+name="brand_name"
+value="<%= brand.brand_name %>"
+required>
+
+<label>Select Company</label>
+
+<select name="chain_id" required>
+
+<% companies.forEach(company => { %>
+
+<option
+value="<%= company.chain_id %>"
+<%= company.chain_id == brand.chain_id ? 'selected' : '' %>>
+
+<%= company.company_name %>
+
+</option>
+
+<% }) %>
+
+</select>
+
+<button type="submit">
+
+Update Brand
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "brand-management-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^...",
+    "ejs": "^...",
+    "express": "^...",
+    "express-session": "^...",
+    "mysql2": "^..."
+  }
+}

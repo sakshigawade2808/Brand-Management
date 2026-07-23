@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brand Management Dashboard</title>
+
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f5f5f5;
+            margin:0;
+        }
+
+        header{
+            background:#007bff;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            margin-top:30px;
+        }
+
+        .cards{
+
+            display:flex;
+            justify-content:space-between;
+            gap:20px;
+        }
+
+        .card{
+
+            flex:1;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 2px 8px rgba(0,0,0,.2);
+            text-align:center;
+
+        }
+
+        .card h2{
+
+            color:#007bff;
+
+        }
+
+        .btn{
+
+            margin-top:40px;
+            text-align:center;
+
+        }
+
+        .btn a{
+
+            text-decoration:none;
+            background:#007bff;
+            color:white;
+            padding:12px 25px;
+            border-radius:5px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Brand Management Dashboard</h1>
+
+</header>
+
+<div class="container">
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Total Brands</h2>
+
+<h1><%= counts.totalBrands %></h1>
+
+</div>
+
+<div class="card">
+
+<h2>Active Brands</h2>
+
+<h1><%= counts.activeBrands %></h1>
+
+</div>
+
+<div class="card">
+
+<h2>Inactive Brands</h2>
+
+<h1><%= counts.inactiveBrands %></h1>
+
+</div>
+
+</div>
+
+<div class="btn">
+
+<a href="/brands">
+
+Manage Brands
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

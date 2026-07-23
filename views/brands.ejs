@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Brands</title>
+
+    <style>
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#f5f5f5;
+            margin:0;
+        }
+
+        header{
+            background:#007bff;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            margin-top:30px;
+        }
+
+        .top{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:20px;
+        }
+
+        .btn{
+            background:#007bff;
+            color:white;
+            padding:10px 20px;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        table th,
+        table td{
+            border:1px solid #ddd;
+            padding:12px;
+            text-align:center;
+        }
+
+        table th{
+            background:#007bff;
+            color:white;
+        }
+
+        .edit{
+            background:green;
+            color:white;
+            padding:6px 12px;
+            text-decoration:none;
+            border-radius:4px;
+        }
+
+        .delete{
+            background:red;
+            color:white;
+            border:none;
+            padding:7px 12px;
+            border-radius:4px;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Brand Management</h1>
+
+</header>
+
+<div class="container">
+
+<div class="top">
+
+<h2>All Brands</h2>
+
+<a href="/brands/add" class="btn">
+Add Brand
+</a>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Brand Name</th>
+<th>Company</th>
+<th>Group</th>
+<th>Chain ID</th>
+<th>Edit</th>
+<th>Delete</th>
+
+</tr>
+
+<% brands.forEach((brand)=>{ %>
+
+<tr>
+
+<td><%= brand.brand_id %></td>
+
+<td><%= brand.brand_name %></td>
+
+<td><%= brand.company_name %></td>
+
+<td><%= brand.group_name %></td>
+
+<td><%= brand.chain_id %></td>
+
+<td>
+
+<a
+class="edit"
+href="/brands/edit/<%= brand.brand_id %>">
+
+Edit
+
+</a>
+
+</td>
+
+<td>
+
+<form
+action="/brands/delete/<%= brand.brand_id %>"
+method="POST">
+
+<button
+class="delete">
+
+Delete
+
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+</table>
+
+</div>
+
+</body>
+
+</html>
