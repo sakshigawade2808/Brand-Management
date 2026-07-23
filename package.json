@@ -4,16 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node app.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^...",
-    "ejs": "^...",
-    "express": "^...",
-    "express-session": "^...",
-    "mysql2": "^..."
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.14.3"
   }
 }
